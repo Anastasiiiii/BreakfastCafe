@@ -1,0 +1,132 @@
+.row-header {
+    margin: 0px auto;
+    padding: 0px auto;
+}
+
+.row-content {
+    margin: 0px auto;
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+
+.footer {
+    background-color: #F0A966;
+    color: #070503;
+    margin: 0px auto;
+    padding: 30px 0px 0px 0px;
+}
+
+.jumbotron {
+    padding: 70px 30px 70px 30px;
+    margin: 0px auto;
+    background-color: #F4A460;
+    color: #070503;
+}
+
+.address {
+    font-size: 80%;
+    margin: 0px;
+}
+
+.first-title {
+    padding-top: 30px;
+}
+
+.logo {
+    margin-left: 30px;
+    margin-top: 30px;
+    width: 167px;
+    height: 164px;
+}
+
+body {
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+}
+
+.navbar-dark {
+    background-color: rgb(102 153 204);
+    color: #070503;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.card-header {
+    background-color: rgb(102 153 204);
+}
+
+.p-header {
+    margin-top: 30px;
+}
+
+.h1-header {
+    margin-top: 20px;
+}
+
+.tasty {
+    background-color: rgb(138, 176, 215);
+    color: azure;
+}
+
+.btn-reserve {
+    background-color: rgb(99, 154, 208);
+    color: azure;
+    margin-bottom: 15px;
+}
+
+.freebreakfast {
+    margin-left: -60px;
+}
+
+.data-time {
+    margin-top: 30px;
+    margin-right: 5px;
+}
+
+.link-reserve-table {
+    background-color: rgb(99, 154, 208);
+    color: azure;
+    font-size: larger;
+    margin-top: 15px;
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.card-header {
+    color: azure;
+}
+
+.carousel {
+    background-color: rgb(37, 23, 9);
+    margin-top: 40px;
+}
+
+.carousel-item {
+    height: 300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+}
+
+.btn-group {
+    margin-top: 25px;
+    margin-right: 27px;
+}
+
+#carouselButton {
+    right: 0;
+    position: absolute;
+    bottom: 0px;
+}
