@@ -7,9 +7,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- build:css css/main.css -->
+    <!--<link rel="stylesheet" href="/home/anastasimur/Breakfast Cafe/1/node_modules/bootstrap/dist/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/modal-styles.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal-styles.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <!-- endbuild -->
@@ -20,16 +22,17 @@
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
-            <button class="navbar-toggler" tupe="button" data-toggle="collapse" data-target="#Navbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class = "navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand mr-auto" href="./index.html"><img src="./images/logo.png" width="100" height="80"></a>
+            <a class="navbar-brand mr-auto" href="./index.html"><img src="https://static.vecteezy.com/system/resources/previews/022/638/841/original/one-single-line-drawing-of-fresh-online-sweet-croissant-shop-logo-vector-illustration-breakfast-food-cafe-menu-and-restaurant-badge-concept-modern-continuous-line-draw-design-street-food-logotype-png.png"
+                    width="100" height="80"></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active"><a class="nav-link" href="#"><span class = "fa fa-home fa-lg"> Home</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class = "fa fa-info fa-lg"> About</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="./menu.html"><span class = "fa fa-list fa-lg"> Menu</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class = "fa fa-address-card fa-lg"> Contact</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class = "fa fa-info fa-lg"> About</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class = "fa fa-list fa-lg"> Menu</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class = "fa fa-address-card fa-lg"> Contact</span></a></li>
                 </ul>
                 <span class="navbar-text"> 
                     <button class="btn btn-sm link-reserve-table" id="loginButton">
@@ -85,7 +88,8 @@
                     <p class="p-header">We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <img src="images/logo3.png" class="img-fluid logo">
+                    <img src="https://static.vecteezy.com/system/resources/previews/022/638/841/original/one-single-line-drawing-of-fresh-online-sweet-croissant-shop-logo-vector-illustration-breakfast-food-cafe-menu-and-restaurant-badge-concept-modern-continuous-line-draw-design-street-food-logotype-png.png"
+                        class="img-fluid logo">
                 </div>
                 <div class="col-12 col-sm align-self-center">
                     <button class="btn btn-md link-reserve-table" id="reserveTableButton">
@@ -118,19 +122,19 @@
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
-                                                    <label class="form-check-label" for="inlineCheckbox2">3</label>
+                                                    <label class="form-check-label" for="inlineCheckbox3">3</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
-                                                    <label class="form-check-label" for="inlineCheckbox2">4</label>
+                                                    <label class="form-check-label" for="inlineCheckbox4">4</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
-                                                    <label class="form-check-label" for="inlineCheckbox2">5</label>
+                                                    <label class="form-check-label" for="inlineCheckbox5">5</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
-                                                    <label class="form-check-label" for="inlineCheckbox2">6</label>
+                                                    <label class="form-check-label" for="inlineCheckbox6">6</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,7 +174,7 @@
                 <div id="mycarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="images/pancakes.jpeg" alt="pancakes">
+                            <img class="d-block img-fluid" src="https://www.lavenderandmacarons.com/wp-content/uploads/2018/08/cheese-pancakes-russian-syrniki_2.jpg" alt="pancakes">
                             <div class="carousel-caption d-none d-md-block">
                                 <h2>Cottage Cheese Pancakes</h2><span class="badge tasty">SWEET</span> <span class="badge badge-pill badge-secondary">$3.75</span>
                                 <p class="d-none d-sm-block">Cottage Cheese Pancakes are to-die-for! They have wonderfully crispy edges and a melty center that will have you ENJOY.</p>
@@ -192,9 +196,9 @@
                         </div>
                     </div>
                     <ol class="carousel-indicators">
-                        <li data-target="mycarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="mycarousel" data-slide-to="1"></li>
-                        <li data-target="mycarousel" data-slide-to="2"></li>
+                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel" data-slide-to="1"></li>
+                        <li data-target="#mycarousel" data-slide-to="2"></li>
                     </ol>
                     <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
@@ -214,7 +218,8 @@
             </div>
             <div class="col col-sm order-sm-first col-md">
                 <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail align-items-center" src="images/croissant.jpeg" alt="croissant" width="200px" height="200px">
+                    <img class="d-flex mr-3 img-thumbnail align-items-center" src="https://therecipecritic.com/wp-content/uploads/2022/09/crossaints-2.jpg" alt="croissant" width="200px" height="200px">
+                    <br>
                     <div class="media-body">
                         <h2 class="mt-0">Croissants <span class="badge tasty">TASTY</span> <span class="badge badge-pill badge-secondary">$1.5</span></h2>
                         <p>A croissant is a laminated, yeast-leavened bakery product that contains dough/roll-in fat layers to create a flaky, crispy texture. Croissants belong to the Viennoiserie or pastry category of baked goods along with brioche, Danish
@@ -233,7 +238,7 @@
                 <h2 class="freebreakfast">Free breakfast <span class="badge badge-danger">NEW</span></h2>
                 <p class="freebreakfast">This month, you have an opportunity to have free breakfast in our Breakfast cafee. To take part in this action, you have to buy a hot drink and order a dish from our special menu.</p>
             </div>
-            <img class="d-flex mr-3 img-thumbnail align-items-right" src="images/breackfast1.jpeg" alt="FreeBreakfast" width="200" height="220">
+
         </div>
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 order-sm-last col-md-3">
@@ -241,7 +246,7 @@
             </div>
             <div class="col col-sm order-sm-first col-md">
                 <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail align-self-center" src="images/August Zang.jpeg" alt="August">
+                    <img class="d-flex mr-3 img-thumbnail align-self-center" src="https://alchetron.com/cdn/august-zang-8ffdde7c-3d2c-4b99-b66b-53d8179686d-resize-750.jpeg" alt="August">
                     <div class="media-body">
                         <h2 class="mt-0">August Zang</h2>
                         <h4>Chef-creator of croissants</h4>
@@ -315,9 +320,9 @@
                     <h5>Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">Home</a></li>
-                        <li><a href="./aboutus.html">About</a></li>
+                        <li><a href="#">About</a></li>
                         <li><a href="#">Menu</a></li>
-                        <li><a href="./contactus.html">Contact</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-7 col-sm-5">
@@ -355,8 +360,8 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    <!-- endbuild -->
+    <script src="script.js"></script>
+    <script src="server.js"></script>
 </body>
 
 </html>
