@@ -33,6 +33,10 @@ app.get('/home', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/contact', (req, res) => {
+    res.sendFile(__dirname + '/contactus.html');
+});
+
 app.get('/style.css', (req, res) => {
     res.sendFile(__dirname + '/style.css');
 });
