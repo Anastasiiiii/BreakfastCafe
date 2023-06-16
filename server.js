@@ -1,12 +1,12 @@
 const express = require('express');
 const mysql = require('mysql2');
+const bodyParser = require('body-parser');
 const app = express();
-//const script = require('./public/script');
-//const pageRouter = require('./pageRouter');
 
-
-//app.use('/', script);
 const port = 3000;
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 const connectionOptions = {
     host: "localhost",
@@ -52,13 +52,14 @@ app.get('/style.css', (req, res) => {
     res.sendFile(__dirname + '/style.css');
 });
 
-app.use(express.static('public', {
+app.use(express.static('js', {
     setHeaders: (res, path, stat) => {
       if (path.endsWith('.js')) {
         res.set('Content-Type', 'javascript');
       }
     }
   }));
+
 app.get('/modal-styles.css', (req, res) => {
     res.sendFile(__dirname + '/modal-styles.css');
 });
@@ -72,7 +73,7 @@ app.get('/node_modules/bootstrap/dist/css/bootstrap.min.css.map', (req, res) => 
 });
  
 app.get('/home/get/all', (request, response) => {
-    const sql = 'SELECT * FROM loginInfo';
+    const sql = 'SELECT * FROM SignInfo';
 
     dbConnection.query(sql, (err, result, fields) => {
 
@@ -85,6 +86,20 @@ app.get('/home/get/all', (request, response) => {
     });
 });
 
-/*app.listen(3000, () => {
-    console.log('Server running at http://localhost:3000/');
-});*/
+app.post('/registration', (req, res) => {
+    const {name, email, password} = req.body;
+
+    const query = `INSERT INTO SignInfo (name, email, password) VALUES ('${name}', '${email}', '${password}')`;
+    
+    dbConnection.query(query, (err, result) => {
+        if (err) {
+            console.error('Sign in error: ' + err.stack);
+            res.json({ success: false });
+          } else {
+            console.log('Sign in is ready: ' + result.insertId);
+            res.json({ success: true });
+          }
+        });
+}); 
+
+

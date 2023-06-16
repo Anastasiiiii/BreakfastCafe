@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,11 +12,9 @@
     <link rel="stylesheet" href="modal-styles.css">
     <!---->
     <title>Breakfast: Home</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src = "script.js"></script>
+    <script src = "indexScript.js"></script>
+    
 </head>
-
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
@@ -52,18 +49,25 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-row">
+                            <form id = "registrationForm">
+                                <!--
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="InputID">ID</label>
+                                    <input type="id" class="form-control form-control-sm mr-1" id="InputID" placeholder="Enter your id">
+                                </div>-->
                             <div class="form-group col-sm-4">
-                                <label class="sr-only" for="exampleInputEmail3">Name</label>
-                                <input type="name" class="form-control form-control-sm mr-1" id="exampleInputName3" placeholder="Enter your name">
+                                <label class="sr-only" for="InputName">Name</label>
+                                <input type="name" class="form-control form-control-sm mr-1" id="InputName" placeholder="Enter your name">
                             </div>
                             <div class="form-group col-sm-4">
-                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                                <label class="sr-only" for="InputEmail">Email address</label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="InputEmail" placeholder="Enter email">
                             </div>
                             <div class="form-group col-sm-4">
-                                <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                                <label class="sr-only" for="InputPassword">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="InputPassword" placeholder="Password">
                             </div>
+                            </form>
                             <div class="col-sm-auto">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox">
@@ -73,7 +77,7 @@
                         </div>
                         <div class="form-row">
                             <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancelLoginButton">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1" id = "btnSubmit">Sign in</button>
                         </div>
                     </form>
                 </div>
@@ -121,19 +125,19 @@
                                                     <label class="form-check-label" for="inlineCheckbox2">2</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                                    <input class="form-check-input" type="radio" id="inlineCheckbox3" value="option2">
                                                     <label class="form-check-label" for="inlineCheckbox3">3</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                                    <input class="form-check-input" type="radio" id="inlineCheckbox4" value="option2">
                                                     <label class="form-check-label" for="inlineCheckbox4">4</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                                    <input class="form-check-input" type="radio" id="inlineCheckbox5" value="option2">
                                                     <label class="form-check-label" for="inlineCheckbox5">5</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                                    <input class="form-check-input" type="radio" id="inlineCheckbox6" value="option2">
                                                     <label class="form-check-label" for="inlineCheckbox6">6</label>
                                                 </div>
                                             </div>
@@ -348,16 +352,13 @@
                 </div>
             </div>
         </div>
-    </footer>
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="script.js"></script>
-    <script src="server.js"></script>
+    </footer> 
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src = "login.js"></script>
 </body>
 
 </html>
