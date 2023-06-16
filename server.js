@@ -1,6 +1,11 @@
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
+//const script = require('./public/script');
+//const pageRouter = require('./pageRouter');
+
+
+//app.use('/', script);
 
 const connectionOptions = {
     host: "localhost",
@@ -22,8 +27,8 @@ dbConnection.connect((err) => {
     });
 });
 
+//app.use('/script.js', express.static(__dirname + '/public/script.js'));
 app.use(express.static(__dirname + '/node_modules'));
-app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
     res.send('Hello, World!');
@@ -37,8 +42,17 @@ app.get('/contact', (req, res) => {
     res.sendFile(__dirname + '/contactus.html');
 });
 
+app.get('/admin', (req, res) => {
+    res.sendFile(__dirname + '/adminPage.html');
+});
+
+
 app.get('/style.css', (req, res) => {
     res.sendFile(__dirname + '/style.css');
+});
+
+app.get('./public/script.js', (req, res) => {
+    res.sendFile(__dirname + './public/script.js');
 });
 
 app.get('/modal-styles.css', (req, res) => {
