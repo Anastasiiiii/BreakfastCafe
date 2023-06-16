@@ -6,6 +6,7 @@ const app = express();
 
 
 //app.use('/', script);
+const port = 3000;
 
 const connectionOptions = {
     host: "localhost",
@@ -51,10 +52,13 @@ app.get('/style.css', (req, res) => {
     res.sendFile(__dirname + '/style.css');
 });
 
-app.get('./public/script.js', (req, res) => {
-    res.sendFile(__dirname + './public/script.js');
-});
-
+app.use(express.static('public', {
+    setHeaders: (res, path, stat) => {
+      if (path.endsWith('.js')) {
+        res.set('Content-Type', 'javascript');
+      }
+    }
+  }));
 app.get('/modal-styles.css', (req, res) => {
     res.sendFile(__dirname + '/modal-styles.css');
 });
@@ -63,16 +67,12 @@ app.get('/node_modules/bootstrap/dist/css/bootstrap.min.css', (req, res) => {
     res.sendFile(__dirname + '/node_modules/bootstrap/dist/css/bootstrap.min.css');
 });
 
-app.get('/node_modules/bootstrap-social/bootstrap-social.css', (req, res) => {
-    res.sendFile(__dirname + '/node_modules/bootstrap-social/bootstrap-social.css');
-});
-
 app.get('/node_modules/bootstrap/dist/css/bootstrap.min.css.map', (req, res) => {
     res.sendFile(__dirname + '/node_modules/bootstrap/dist/css/bootstrap.min.css.map');
 });
-
+ 
 app.get('/home/get/all', (request, response) => {
-    const sql = 'SELECT * FROM registration';
+    const sql = 'SELECT * FROM loginInfo';
 
     dbConnection.query(sql, (err, result, fields) => {
 
@@ -85,6 +85,6 @@ app.get('/home/get/all', (request, response) => {
     });
 });
 
-app.listen(3000, () => {
+/*app.listen(3000, () => {
     console.log('Server running at http://localhost:3000/');
-});
+});*/
