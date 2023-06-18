@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const reserveTableButton = document.getElementById("reserveTableButton");
     const closeModalButton = document.getElementById("closeModalButton");
     const cancelReserveButton = document.getElementById("cancelReserveButton");
+    const loginLink = document.getElementById("loginLink");
 
     tooltipElements.forEach(function(element) {
         new bootstrap.Tooltip(element);
@@ -29,18 +30,25 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    const loginModal = new bootstrap.Modal(document.getElementById("loginModal"));
+    const signInModal = new bootstrap.Modal(document.getElementById("signInModal"));
     loginButton.addEventListener("click", function() {
-        loginModal.show();
+        signInModal.show();
     });
 
     closeButton.addEventListener("click", function() {
-        loginModal.hide();
+        signInModal.hide();
     });
 
     cancelLoginButton.addEventListener("click", function() {
-        loginModal.hide();
+        signIn.hide();
     });
+
+
+    const loginModal = new bootstrap.Modal(document.getElementById("loginModal"));
+    loginLink.addEventListener("click", function() {
+        signInModal.hide();
+        loginModal.show();
+    })
 
     const reserveModal = new bootstrap.Modal(document.getElementById("reserveModal"));
     reserveTableButton.addEventListener("click", function() {

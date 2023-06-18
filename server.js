@@ -46,6 +46,9 @@ app.get('/contact', (req, res) => {
 app.get('/admin', (req, res) => {
     res.sendFile(__dirname + '/adminPage.html');
 });
+app.get('/logedPage', (req, res) => {
+    res.sendFile(__dirname + '/logedPage.html');
+});
 
 
 app.get('/style.css', (req, res) => {
@@ -101,5 +104,24 @@ app.post('/registration', (req, res) => {
           }
         });
 }); 
+
+app.post('/login', (req, res) => {
+
+    const {email, password} = req.body;
+
+    const query = 'SELECT * FROM SignInfo WHERE email = ? AND password = ?';
+  
+    dbConnection.query(query, [email, password], (error, results) => {
+        if (error) {
+          console.error('Request error:', error);
+          res.sendStatus(500);
+        } else {
+          const success = results.length > 0;
+          res.json({ success });
+        }
+    });
+  });
+
+  
 
 

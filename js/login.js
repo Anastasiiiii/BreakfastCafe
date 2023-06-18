@@ -28,3 +28,34 @@ function postData() {
         console.error('Error: ' + err);
     })
 };
+
+  const btnLogin = document.getElementById('btnLogin');
+  btnLogin.addEventListener('click', checkData);
+
+function checkData() {
+    const emailInput = document.getElementById('InputEmailForCheck');
+    const passwordInput = document.getElementById('InputPasswordForCheck');
+
+    const userData = {emailInput, passwordInput};
+
+    fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+          window.location.href = '/logedPage';
+          console.log("Data is checked")
+        } else {
+          alert('Incorrect email or password');
+        }
+    })
+    .catch(err => {
+        console.error('Request error:', err);
+    })
+  }
+  
