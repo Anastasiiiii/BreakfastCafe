@@ -5,9 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const loginButton = document.getElementById("loginButton");
     const closeButton = document.getElementById("closeButton");
     const cancelLoginButton = document.getElementById("cancelLoginButton");
-    const reserveTableButton = document.getElementById("reserveTableButton");
-    const closeModalButton = document.getElementById("closeModalButton");
-    const cancelReserveButton = document.getElementById("cancelReserveButton");
     const loginLink = document.getElementById("loginLink");
 
     tooltipElements.forEach(function(element) {
@@ -50,19 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
         loginModal.show();
     })
 
-    const reserveModal = new bootstrap.Modal(document.getElementById("reserveModal"));
-    reserveTableButton.addEventListener("click", function() {
-        reserveModal.show();
-    });
-
-    closeModalButton.addEventListener("click", function() {
-        reserveModal.hide();
-    });
-
-    cancelReserveButton.addEventListener("click", function() {
-        reserveModal.hide();
-    });
-
-    loginModal.show();
+    
 });
 
