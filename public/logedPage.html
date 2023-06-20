@@ -6,13 +6,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- css-->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css.map">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="modal-styles.css">
+    <link rel="stylesheet" href="/1/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/1/node_modules/bootstrap/dist/css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="/1/public/css/style.css">
     <!---->
     <title>Breakfast: Home</title>
-    <script src = "indexScript.js"></script>
+    <script src = "/1/public/js/indexScript.js"></script>
     
 </head>
 <body>
@@ -31,85 +30,9 @@
                     <li class="nav-item"><a class="nav-link" href="/contact"><span class = "fa fa-address-card fa-lg"> Contact</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="/admin"><span class = "fa fa-address-card fa-lg"> Admin</span></a></li>
                 </ul>
-                <span class="navbar-text"> 
-                    <button class="btn btn-sm link-reserve-table" id="loginButton">
-                        <span class = "fa fa-sign-in"> &nbsp;Sign in</span>
-                </button>
-                </span>
             </div>
         </div>
-    </nav>
-    <!--Modal-->
-    <div class="modal fade" role="dialog" id="signInModal">
-        <div class="modal-dialog modal-lg" role="content">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Sign in</h4>
-                    <button type="button" class="close" id="closeButton">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-row">
-                            <form id = "registrationForm">
-                            <div class="form-group col-sm-4">
-                                <label class="sr-only" for="InputName">Name</label>
-                                <input type="name" class="form-control form-control-sm mr-1" id="InputName" placeholder="Enter your name">
-                            </div>
-                            <div class="form-group col-sm-4">
-                                <label class="sr-only" for="InputEmail">Email address</label>
-                                <input type="email" class="form-control form-control-sm mr-1" id="InputEmail" placeholder="Enter your email">
-                            </div>
-                            <div class="form-group col-sm-4">
-                                <label class="sr-only" for="InputPassword">Password</label>
-                                <input type="password" class="form-control form-control-sm mr-1" id="InputPassword" placeholder="Create password">
-                            </div>
-                            </form>
-                            <div class="col-sm-auto">
-                                <div class="form-check">
-                                    <p class="form-check-label">Already a user? <a id="loginLink">LOGIN</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancelLoginButton">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1" id = "btnSubmit"><a href="/logedPage" id = "btnLink">Sign in</a></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!---->
-    <!--Login Modal-->
-    <div class="modal fade" role="dialog" id="loginModal">
-        <div class="modal-dialog modal-lg" role="content">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Sign in</h4>
-                    <button type="button" class="close" id="closeButton">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form id = "loginForm">
-                        <div class="form-row">
-                                <div class="form-group col-sm-4">
-                                    <label class="sr-only" for="InputEmailForCheck">Email</label>
-                                    <input type="name" class="form-control form-control-sm mr-1" id="InputEmailForCheck" placeholder="Enter your email">
-                                </div>
-                                <div class="form-group col-sm-4">
-                                    <label class="sr-only" for="InputPasswordForCheck">Password</label>
-                                    <input type="password" class="form-control form-control-sm mr-1" id="InputPasswordForCheck" placeholder="Enter your password">
-                                </div>
-                        </div>
-                        <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancelLoginButton">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1" id = "btnLogin">Login</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!---->
+    </nav> 
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -121,6 +44,80 @@
                     <img src="https://static.vecteezy.com/system/resources/previews/022/638/841/original/one-single-line-drawing-of-fresh-online-sweet-croissant-shop-logo-vector-illustration-breakfast-food-cafe-menu-and-restaurant-badge-concept-modern-continuous-line-draw-design-street-food-logotype-png.png"
                         class="img-fluid logo">
                 </div>
+                <div class="col-12 col-sm align-self-center">
+                    <button class="btn btn-md link-reserve-table" id="reserveTableButton">
+                        <span id = "reserve-button-icon"> Reserve Table</span>
+                    </button>
+                </div>
+
+                <div id="reserveModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg" role="content">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Reserve a table</h4>
+                                <button type="button" class="close" id="closeModalButton">
+                                    &times;
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col"><b>Number of Guests</b></div>
+                                            <div class="col-6">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1">
+                                                    <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                                    <label class="form-check-label" for="inlineCheckbox2">2</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" id="inlineCheckbox3" value="option2">
+                                                    <label class="form-check-label" for="inlineCheckbox3">3</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" id="inlineCheckbox4" value="option2">
+                                                    <label class="form-check-label" for="inlineCheckbox4">4</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" id="inlineCheckbox5" value="option2">
+                                                    <label class="form-check-label" for="inlineCheckbox5">5</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" id="inlineCheckbox6" value="option2">
+                                                    <label class="form-check-label" for="inlineCheckbox6">6</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col data-time"><b>Section</b></div>
+                                            <div class="btn-group btn-group-sm col" role="group" aria-label="Basic example">
+                                                <button type="button" class="btn btn-success">Non-Smoking</button>
+                                                <button type="button" class="btn btn-danger">Smoking</button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col data-time"><b>Data and Time</b></div>
+                                            <div class="col-3 col-md-3 data-time">
+                                                <input type="time" class="form-control" id="time" name="time" placeholder="Time">
+                                            </div>
+                                            <div class="col-3 col-md-3 data-time">
+                                                <input type="data" class="form-control" id="data" name="data" placeholder="Data">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancelReserveButton">Cancel</button>
+                                        <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
@@ -210,6 +207,60 @@
                 </div>
             </div>
         </div>
+        <div class="row row-content justify-content-center" id="reserve-table">
+            <div class="col-7">
+                <div class="card card-responsive">
+                    <h3 class="card-header text-white">Reserve a Table</h3>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col"><b>Number of Guests</b></div>
+                            <div class="col-6">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">6</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col data-time"><b>Data and Time</b></div>
+                            <div class="col-3 col-md-3 data-time">
+                                <input type="time" class="form-control" id="time" name="time" placeholder="Time">
+                            </div>
+                            <div class="col-3 col-md-3 data-time">
+                                <input type="data" class="form-control" id="data" name="data" placeholder="Data">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="offset-md-2 col-md-10">
+                            <button type="submit" class="btn btn-reserve btn-warning" data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+852 12345678</strong>" data-placement="bottom">
+                                Reserve
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     </div>
@@ -256,7 +307,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src = "login.js"></script>
 </body>
 
 </html>
