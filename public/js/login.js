@@ -22,6 +22,7 @@ function postData() {
     .then(data => {
         if (data.success) {
             console.log("Sign in is done");
+            localStorage.setItem('GuestLoginName', name);
         } else {
             console.log('Sign in error');
         }

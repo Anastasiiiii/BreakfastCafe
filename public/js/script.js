@@ -1,33 +1,32 @@
-document.addEventListener('DOMContentLoaded', function() {
-    showComments();
-    function showComments() {
-        let commentField = document.getElementById('comment-field');
-        let out = '';
-        comments.forEach(function(item, index) {
-            out += `<div class="alert alert-primary alert-dismissible fade show" role="alert">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="mb-0"><b>${item.name}</b></p>
-                            <p class="mb-0 text-right small"><em>${timeConverter(item.time)}</em></p>
-                        </div>
-                        <button type="button" class="close delete-button" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <p>${item.feedback}</p>
-                    </div>`;
-        });
-        commentField.innerHTML = out;
-        deleteComments();
-    }
-});
+const guestNumInfo = localStorage.getItem('guestsNum'); 
+const guestLocInfo = localStorage.getItem('guestsLocation');
+const guestTimeInfo = localStorage.getItem('guestsDateTime');
 
+const timeData = JSON.parse(guestTimeInfo); 
+const formattedTime = `${timeData.time} ${timeData.date}`; 
+console.log(formattedTime); 
 
-
-if (typeof window !== 'undefined') {
-    window.onload = function() {
-        var input = document.getElementById("input");
-        var comments = document.getElementById("comments");
-        input.oninput = function() {
-            comments.innerHTML = input.value;
-        };
-    };
+function Data(number, location, time) {
+    this.number = number;
+    this.location = location;
+    this.time = time;
 }
+
+const data = new Data(guestNumInfo, guestLocInfo, formattedTime);
+if (guestNumInfo && guestLocInfo && formattedTime) {
+  const container = document.getElementById("for-new-block");  
+  const block = document.createElement('div');
+  block.className = "container border border-secondary"
+  block.id = "new-block"
+  block.innerHTML = `<h3 class = "pt-3">Guests Reservation</h3><p>Guests number: ${data.number}</p>
+  <p>Section: ${data.location}</p>
+  <p>Data and time: ${data.time}</p>`;
+  
+  container.appendChild(block);
+} else {
+  console.log("There is no data");
+}
+
+
+
+

@@ -135,3 +135,11 @@ body {
     text-decoration:none;
     color: azure;
 }
+
+#for-new-block {
+    margin-top: 120px;
+}
+
+#new-block {
+    margin-top: 20px;
+}
