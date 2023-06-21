@@ -1,8 +1,10 @@
 const btnSubmit = document.getElementById('btnSubmit'); 
 
+
 btnSubmit.addEventListener('click', postData);
 
 function postData() {
+    const guestName = document.getElementById('guestName');
     const name = document.getElementById('InputName').value;
     const email = document.getElementById('InputEmail').value;
     const password = document.getElementById('InputPassword').value;

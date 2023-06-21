@@ -1,313 +1,256 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <!-- css-->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css.map">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="modal-styles.css"
-    <!---->
-    <title>Breakfast: Home</title>
-    <script src = "indexScript.js"></script>
-    <script src = "ReserveTable.js"></script>
-</head>
-<body>
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-                <span class = "navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand mr-auto" href="/home"><img src="https://static.vecteezy.com/system/resources/previews/022/638/841/original/one-single-line-drawing-of-fresh-online-sweet-croissant-shop-logo-vector-illustration-breakfast-food-cafe-menu-and-restaurant-badge-concept-modern-continuous-line-draw-design-street-food-logotype-png.png"
-                    width="100" height="80"></a>
-            <div class="collapse navbar-collapse" id="Navbar">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#"><span class = "fa fa-home fa-lg"> Home</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span class = "fa fa-info fa-lg"> About</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span class = "fa fa-list fa-lg"> Menu</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact"><span class = "fa fa-address-card fa-lg"> Contact</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="/admin"><span class = "fa fa-address-card fa-lg"> Admin</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav> 
-    <header class="jumbotron">
-        <div class="container">
-            <div class="row row-header">
-                <div class="col-12 col-sm-6">
-                    <h1 class="h1-header">Breakfast cafe</h1>
-                    <p class="p-header">We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
-                </div>
-                <div class="col-12 col-sm align-self-center">
-                    <img src="https://static.vecteezy.com/system/resources/previews/022/638/841/original/one-single-line-drawing-of-fresh-online-sweet-croissant-shop-logo-vector-illustration-breakfast-food-cafe-menu-and-restaurant-badge-concept-modern-continuous-line-draw-design-street-food-logotype-png.png"
-                        class="img-fluid logo">
-                </div>
-                <div class="col-12 col-sm align-self-center">
-                    <button class="btn btn-md link-reserve-table" id="reserveTableButton">
-                        <span id = "reserve-button-icon"> Reserve Table</span>
-                    </button>
-                </div>
-
-                <div id="reserveModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog modal-lg" role="content">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Reserve a table</h4>
-                                <button type="button" class="close" id="closeModalButton">
-                                    &times;
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col"><b>Number of Guests</b></div>
-                                            <div class="col-6">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1">
-                                                    <label class="form-check-label" for="inlineCheckbox1">1</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
-                                                    <label class="form-check-label" for="inlineCheckbox2">2</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" id="inlineCheckbox3" value="option2">
-                                                    <label class="form-check-label" for="inlineCheckbox3">3</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" id="inlineCheckbox4" value="option2">
-                                                    <label class="form-check-label" for="inlineCheckbox4">4</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" id="inlineCheckbox5" value="option2">
-                                                    <label class="form-check-label" for="inlineCheckbox5">5</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" id="inlineCheckbox6" value="option2">
-                                                    <label class="form-check-label" for="inlineCheckbox6">6</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col data-time"><b>Section</b></div>
-                                            <div class="btn-group btn-group-sm col" role="group" aria-label="Basic example">
-                                                <button type="button" class="btn btn-success">Non-Smoking</button>
-                                                <button type="button" class="btn btn-danger">Smoking</button>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col data-time"><b>Data and Time</b></div>
-                                            <div class="col-3 col-md-3 data-time">
-                                                <input type="time" class="form-control" id="time" name="time" placeholder="Time">
-                                            </div>
-                                            <div class="col-3 col-md-3 data-time">
-                                                <input type="data" class="form-control" id="data" name="data" placeholder="Data">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancelReserveButton">Cancel</button>
-                                        <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="row row-content">
-            <div class="col">
-                <div id="mycarousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="https://www.lavenderandmacarons.com/wp-content/uploads/2018/08/cheese-pancakes-russian-syrniki_2.jpg" alt="pancakes">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h2>Cottage Cheese Pancakes</h2><span class="badge tasty">SWEET</span> <span class="badge badge-pill badge-secondary">$3.75</span>
-                                <p class="d-none d-sm-block">Cottage Cheese Pancakes are to-die-for! They have wonderfully crispy edges and a melty center that will have you ENJOY.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzHk_Z90EgYLgd_PwRzGTvGzvFykb9dqfAUSDO4GHX0QeFa5LNw63rHlOCz9tiNCe0FBg&usqp=CAU" alt="scrammbled">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h2>The Hunting breakfast</h2><span class="badge tasty">SALTY</span> <span class="badge badge-pill badge-secondary">$4.25</span>
-                                <p class="d-none d-sm-block">Fried sausages with eggs whose whites and yolks are stirred together while cooking. In addition, freshly baked brad.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="https://storcpdkenticomedia.blob.core.windows.net/media/recipemanagementsystem/media/recipe-media-files/recipes/retail/x17/2020_belgian-style-waffles_16700_760x580.jpg?ext=.jpg" alt="waffle" width="370" height="40">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h2>Waffles</h2><span class="badge tasty">TASTY</span> <span class="badge badge-pill badge-secondary">$2.45</span>
-                                <p class="d-none d-sm-block">Waffle, crisp raised cake baked in a waffle iron. With different topings.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <ol class="carousel-indicators">
-                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#mycarousel" data-slide-to="1"></li>
-                        <li data-target="#mycarousel" data-slide-to="2"></li>
-                    </ol>
-                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
-                        <span class="carousel-control-icon"></span>
-                    </a>
-                    <button class="btn btn-danger btn-sm" id="carouselButton">
-                        <span id = "carousel-button-icon" class = "fa fa-pause"></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="row row-content align-items-center">
-            <div class="col-12 col-sm-4 order-sm-last col-md-3">
-                <h3>Our Lipsmacking Culinary Creations</h3>
-            </div>
-            <div class="col col-sm order-sm-first col-md">
-                <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail align-items-center" src="https://therecipecritic.com/wp-content/uploads/2022/09/crossaints-2.jpg" alt="croissant" width="200px" height="200px">
-                    <br>
-                    <div class="media-body">
-                        <h2 class="mt-0">Croissants <span class="badge tasty">TASTY</span> <span class="badge badge-pill badge-secondary">$1.5</span></h2>
-                        <p>A croissant is a laminated, yeast-leavened bakery product that contains dough/roll-in fat layers to create a flaky, crispy texture. Croissants belong to the Viennoiserie or pastry category of baked goods along with brioche, Danish
-                            and puff pastries.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row row-content align-items-center">
-            <div class="col-12 col-sm-4 col-md-3">
-                <h2>This Month`s Promotions</h2>
-            </div>
-            <div class="col col-sm offset-2 col-md">
-                <h2 class="freebreakfast">Free breakfast <span class="badge badge-danger">NEW</span></h2>
-                <p class="freebreakfast">This month, you have an opportunity to have free breakfast in our Breakfast cafee. To take part in this action, you have to buy a hot drink and order a dish from our special menu.</p>
-            </div>
-
-        </div>
-        <div class="row row-content align-items-center">
-            <div class="col-12 col-sm-4 order-sm-last col-md-3">
-                <h3>Meet our Culinary Specialists</h3>
-            </div>
-            <div class="col col-sm order-sm-first col-md">
-                <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail align-self-center" src="https://alchetron.com/cdn/august-zang-8ffdde7c-3d2c-4b99-b66b-53d8179686d-resize-750.jpeg" alt="August">
-                    <div class="media-body">
-                        <h2 class="mt-0">August Zang</h2>
-                        <h4>Chef-creator of croissants</h4>
-                        <p class="d-none d-sm-block">The birth of the croissant itself—that is, its adaptation from the plainer form of kipferl, before the invention of viennoiseries—can be dated to at least 1839 (some say 1838) when an Austrian artillery officer, August Zang, founded
-                            a Viennese bakery ("Boulangerie Viennoise") at 92, rue de Richelieu in Paris.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row row-content justify-content-center" id="reserve-table">
-            <div class="col-7">
-                <div class="card card-responsive">
-                    <h3 class="card-header text-white">Reserve a Table</h3>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col"><b>Number of Guests</b></div>
-                            <div class="col-6">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1">
-                                    <label class="form-check-label" for="inlineCheckbox1">1</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">2</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">3</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">4</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">5</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">6</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col data-time"><b>Data and Time</b></div>
-                            <div class="col-3 col-md-3 data-time">
-                                <input type="time" class="form-control" id="time" name="time" placeholder="Time">
-                            </div>
-                            <div class="col-3 col-md-3 data-time">
-                                <input type="data" class="form-control" id="data" name="data" placeholder="Data">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="offset-md-2 col-md-10">
-                            <button type="submit" class="btn btn-reserve btn-warning" data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+852 12345678</strong>" data-placement="bottom">
-                                Reserve
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-4 offset-1 col-sm-2">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">Contact</a></li>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- css-->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css.map">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="modal-styles.css">
+        <!---->
+        <title>Breakfast: Home</title>
+        <script src = "ReserveTable.js"></script>
+    </head>
+    <body>
+        <!--menu-->
+        <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class = "navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand mr-auto" href="/home">
+                    <img src="https://static.vecteezy.com/system/resources/previews/022/638/841/original/one-single-line-drawing-of-fresh-online-sweet-croissant-shop-logo-vector-illustration-breakfast-food-cafe-menu-and-restaurant-badge-concept-modern-continuous-line-draw-design-street-food-logotype-png.png" width="100" height="80">
+                </a>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a class="nav-link" href="#"><span class = "fa fa-home fa-lg"> Home</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span class = "fa fa-info fa-lg"> About</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span class = "fa fa-list fa-lg"> Menu</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact"><span class = "fa fa-address-card fa-lg"> Contact</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/admin"><span class = "fa fa-address-card fa-lg"> Admin</span></a></li>
                     </ul>
                 </div>
-                <div class="col-7 col-sm-5">
-                    <h5>Our Address</h5>
-                    <address>
-                        Kyiv<br>
-                        <i class = "fa fa-phone fa-lg"></i>: +38 068 123 5678<br>
-                        <i class = "fa fa-envelope fa-lg"></i>: <a href="mailto:breakfastCafe@gmail.com">breakfastCafe@gmail.com</a>
-                     </address>
-                </div>
-                <div class="col-12 col-sm-4 align-self-center">
-                    <div class="text-center">
-                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class = "fa fa-google-plus fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class = "fa fa-facebook fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class = "fa fa-linkedin fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class = "fa fa-twitter fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class = "fa fa-youtube fa-lg"></i></a>
-                        <a class="btn btn-social-icon" href="mailto:"><i class = "fa fa-envelope-o fa-lg"></i></a>
+            </div>
+        </nav> 
+        <!---->
+        <header class="jumbotron">
+            <div class="container">
+                <div class="row row-header">
+                    <div class="col-12 col-sm-6">
+                        <h1 class="h1-header">Breakfast cafe</h1>
+                        <!--<h2 class = "h2-header">Welcome Back, <span id = "guestName"></span></h2>-->
+                        <p class="p-header">We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                    </div>
+                    <div class="col-12 col-sm align-self-center">
+                        <img src="https://static.vecteezy.com/system/resources/previews/022/638/841/original/one-single-line-drawing-of-fresh-online-sweet-croissant-shop-logo-vector-illustration-breakfast-food-cafe-menu-and-restaurant-badge-concept-modern-continuous-line-draw-design-street-food-logotype-png.png" class="img-fluid logo">
+                    </div>
+                    <div class="col-12 col-sm align-self-center">
+                        <button class="btn btn-md link-reserve-table" id="reserveTableButton">
+                            <span id = "reserve-button-icon"> Reserve Table</span>
+                        </button>
+                    </div>
+                    <div id="reserveModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog modal-lg" role="content">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Reserve a table</h4>
+                                    <button type="button" class="close" id="closeModalButton">
+                                        &times;
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col"><b>Number of Guests</b></div>
+                                                <div class="col-6">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1">
+                                                        <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                                        <label class="form-check-label" for="inlineCheckbox2">2</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" id="inlineCheckbox3" value="option2">
+                                                        <label class="form-check-label" for="inlineCheckbox3">3</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" id="inlineCheckbox4" value="option2">
+                                                        <label class="form-check-label" for="inlineCheckbox4">4</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" id="inlineCheckbox5" value="option2">
+                                                        <label class="form-check-label" for="inlineCheckbox5">5</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" id="inlineCheckbox6" value="option2">
+                                                        <label class="form-check-label" for="inlineCheckbox6">6</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col data-time"><b>Section</b></div>
+                                                <div class="btn-group btn-group-sm col" role="group" aria-label="Basic example">
+                                                    <button type="button" class="btn btn-success">Non-Smoking</button>
+                                                    <button type="button" class="btn btn-danger">Smoking</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col data-time"><b>Data and Time</b></div>
+                                                <div class="col-3 col-md-3 data-time">
+                                                    <input type="time" class="form-control" id="time" name="time" placeholder="Time">
+                                                </div>
+                                                <div class="col-3 col-md-3 data-time">
+                                                    <input type="data" class="form-control" id="data" name="data" placeholder="Data">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancelReserveButton">Cancel</button>
+                                            <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-auto">
-                    <p>© Breakfast cafe</p>
+        </header>
+        <div class="container">
+            <div class="row row-content">
+                <div class="col">
+                    <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid" src="https://www.lavenderandmacarons.com/wp-content/uploads/2018/08/cheese-pancakes-russian-syrniki_2.jpg" alt="pancakes">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2>Cottage Cheese Pancakes</h2><span class="badge tasty">SWEET</span> <span class="badge badge-pill badge-secondary">$3.75</span>
+                                    <p class="d-none d-sm-block">Cottage Cheese Pancakes are to-die-for! They have wonderfully crispy edges and a melty center that will have you ENJOY.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzHk_Z90EgYLgd_PwRzGTvGzvFykb9dqfAUSDO4GHX0QeFa5LNw63rHlOCz9tiNCe0FBg&usqp=CAU" alt="scrammbled">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2>The Hunting breakfast</h2><span class="badge tasty">SALTY</span> <span class="badge badge-pill badge-secondary">$4.25</span>
+                                    <p class="d-none d-sm-block">Fried sausages with eggs whose whites and yolks are stirred together while cooking. In addition, freshly baked brad.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="https://storcpdkenticomedia.blob.core.windows.net/media/recipemanagementsystem/media/recipe-media-files/recipes/retail/x17/2020_belgian-style-waffles_16700_760x580.jpg?ext=.jpg" alt="waffle" width="370" height="40">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2>Waffles</h2><span class="badge tasty">TASTY</span> <span class="badge badge-pill badge-secondary">$2.45</span>
+                                    <p class="d-none d-sm-block">Waffle, crisp raised cake baked in a waffle iron. With different topings.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#mycarousel" data-slide-to="1"></li>
+                            <li data-target="#mycarousel" data-slide-to="2"></li>
+                        </ol>
+                        <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                            <span class="carousel-control-icon"></span>
+                        </a>
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <span id = "carousel-button-icon" class = "fa fa-pause"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-content align-items-center">
+                <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                    <h3>Our Lipsmacking Culinary Creations</h3>
+                </div>
+                <div class="col col-sm order-sm-first col-md">
+                    <div class="media">
+                        <img class="d-flex mr-3 img-thumbnail align-items-center" src="https://therecipecritic.com/wp-content/uploads/2022/09/crossaints-2.jpg" alt="croissant" width="200px" height="200px">
+                        <br>
+                        <div class="media-body">
+                            <h2 class="mt-0">Croissants <span class="badge tasty">TASTY</span> <span class="badge badge-pill badge-secondary">$1.5</span></h2>
+                            <p>A croissant is a laminated, yeast-leavened bakery product that contains dough/roll-in fat layers to create a flaky, crispy texture. Croissants belong to the Viennoiserie or pastry category of baked goods along with brioche, Danish
+                                and puff pastries.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-content align-items-center">
+                <div class="col-12 col-sm-4 col-md-3">
+                    <h2>This Month`s Promotions</h2>
+                </div>
+                <div class="col col-sm offset-2 col-md">
+                    <h2 class="freebreakfast">Free breakfast <span class="badge badge-danger">NEW</span></h2>
+                    <p class="freebreakfast">This month, you have an opportunity to have free breakfast in our Breakfast cafee. To take part in this action, you have to buy a hot drink and order a dish from our special menu.</p>
+                </div>
+            </div>
+            <div class="row row-content align-items-center">
+                <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                    <h3>Meet our Culinary Specialists</h3>
+                </div>
+                <div class="col col-sm order-sm-first col-md">
+                    <div class="media">
+                        <img class="d-flex mr-3 img-thumbnail align-self-center" src="https://alchetron.com/cdn/august-zang-8ffdde7c-3d2c-4b99-b66b-53d8179686d-resize-750.jpeg" alt="August">
+                        <div class="media-body">
+                            <h2 class="mt-0">August Zang</h2>
+                            <h4>Chef-creator of croissants</h4>
+                            <p class="d-none d-sm-block">
+                                The birth of the croissant itself—that is, its adaptation from the plainer form of kipferl, before the invention of viennoiseries—can be dated to at least 1839 (some say 1838) when an Austrian artillery officer, August Zang, founded
+                                a Viennese bakery ("Boulangerie Viennoise") at 92, rue de Richelieu in Paris.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer> 
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 offset-1 col-sm-2">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Menu</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-7 col-sm-5">
+                        <h5>Our Address</h5>
+                        <address>
+                            City: Kyiv<br>
+                            <i class = "fa fa-phone fa-lg"></i>Phone number: +38 068 123 5678<br>
+                            <i class = "fa fa-envelope fa-lg"></i>Email: <a href="mailto:breakfastCafe@gmail.com">breakfastCafe@gmail.com</a>
+                        </address>
+                    </div>
+                    <div class="col-12 col-sm-4 align-self-center">
+                        <div class="text-center">
+                            <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class = "fa fa-google-plus fa-lg"></i></a>
+                            <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class = "fa fa-facebook fa-lg"></i></a>
+                            <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class = "fa fa-linkedin fa-lg"></i></a>
+                            <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class = "fa fa-twitter fa-lg"></i></a>
+                            <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class = "fa fa-youtube fa-lg"></i></a>
+                            <a class="btn btn-social-icon" href="mailto:"><i class = "fa fa-envelope-o fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <p>© Breakfast cafe</p>
+                    </div>
+                </div>
+            </div>
+        </footer> 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
 </html>
