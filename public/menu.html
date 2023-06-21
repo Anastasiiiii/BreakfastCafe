@@ -31,54 +31,21 @@
             </div>
         </nav>
         <div><br><br><br></div>
-        <div class="container mt-5" id = "menu-cars">
-            <div class="card" style="width: 18rem;" id = "cards">
-                <img class="card-img-top mt-3 p-2" src="https://static.fajnegotowanie.pl/media/uploads/media_image/original/przepis/1458/croissant.jpg" alt="Card image cap">
-                <div class="card-body">
-                <h5 class="card-title">Croissant</h5>
-                <p class="card-text">A croissant is a laminated, yeast-leavened bakery product that contains dough/roll-in fat layers to create a flaky, crispy texture.</p>
+        
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script id="menu-template" type="text/x-handlebars-template">
+            <div class="container mt-5" id="menu-cars">
+                <div class="card" style="width: 18rem;" id="cards">
+                    {{#each blocks}}
+                    <img class="card-img-top mt-3 p-2" src="{{img}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}}</h5>
+                        <p class="card-text">{{desc}}</p>
+                    </div>
+                    {{/each}}
                 </div>
             </div>
-        </div>
-        <div><br><br><br></div>
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-4 offset-1 col-sm-2">
-                        <h5>Links</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Menu</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-7 col-sm-5">
-                        <h5>Our Address</h5>
-                        <address>
-                            City: Kyiv<br>
-                            <i class = "fa fa-phone fa-lg"></i>Phone number: +38 068 123 5678<br>
-                            <i class = "fa fa-envelope fa-lg"></i>Email: <a href="mailto:breakfastCafe@gmail.com">breakfastCafe@gmail.com</a>
-                        </address>
-                    </div>
-                    <div class="col-12 col-sm-4 align-self-center">
-                        <div class="text-center">
-                            <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class = "fa fa-google-plus fa-lg"></i></a>
-                            <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class = "fa fa-facebook fa-lg"></i></a>
-                            <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class = "fa fa-linkedin fa-lg"></i></a>
-                            <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class = "fa fa-twitter fa-lg"></i></a>
-                            <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class = "fa fa-youtube fa-lg"></i></a>
-                            <a class="btn btn-social-icon" href="mailto:"><i class = "fa fa-envelope-o fa-lg"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-auto">
-                        <p>© Breakfast cafe</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        </script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
