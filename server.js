@@ -60,6 +60,10 @@ app.get('/logedPage', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'logedPage.html'));
 });
 
+app.get('/menu', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'menu.html'));
+});
+
 app.get('/style.css', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'css', 'style.css'));
 });
