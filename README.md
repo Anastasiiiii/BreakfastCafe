@@ -5,7 +5,7 @@ The website is responsive, allowing you to reserve a table and leave comments fr
 
 ![alt text](https://github.com/Anastasiiiii/BreakfastCafe/blob/main/img/1%20(3).png)
 
-![alt text](https://github.com/Anastasiiiii/BreakfastCafe/blob/main/img/2%20(1).png)
+![alt text](https://github.com/Anastasiiiii/BreakfastCafe/blob/main/img/2(1).png)
 
 ![alt text](https://github.com/Anastasiiiii/BreakfastCafe/blob/main/img/3%20(1).png)
 
