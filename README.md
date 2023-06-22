@@ -1,5 +1,5 @@
 # BreakfastCafe
-My online 🥐 breakfast cafe is a website where guests can find out about the place before visiting.
+My online __🥐__ breakfast cafe is a website where guests can find out about the place before visiting.
 ### Description
 The website is responsive, allowing you to reserve a table and leave comments from any device.
 
